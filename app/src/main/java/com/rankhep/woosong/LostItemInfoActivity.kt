@@ -1,0 +1,1 @@
+package com.rankhep.woosongimport android.support.v7.app.AppCompatActivityimport android.os.Bundleclass LostItemInfoActivity : AppCompatActivity() {    override fun onCreate(savedInstanceState: Bundle?) {        super.onCreate(savedInstanceState)        setContentView(R.layout.activity_lost_item_info)    }}
