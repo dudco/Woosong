@@ -1,14 +1,12 @@
 package com.rankhep.woosong.utils
 
 
-import com.rankhep.woosong.model.LostItem
 import com.rankhep.woosong.model.LostItemListResponseModel
 import com.rankhep.woosong.model.Station
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.http.*
-import java.util.*
 
 
 /**
@@ -27,11 +25,22 @@ interface RetrofitInterface {
         @Part("daytime") daytime: RequestBody,
         @Part("getLocation") locationBody: RequestBody,
         @Part("storageLocation") storageLocation: RequestBody,
-        @Part("description") description:RequestBody) : Call<Any>
+        @Part("description") description: RequestBody
+    ): Call<Any>
 
     @GET("/item/list")
-    fun getList():Call<LostItemListResponseModel>
+    fun getList(): Call<LostItemListResponseModel>
 
     @GET("/item/search")
-    fun searchList(@Query("query") query: String):Call<LostItemListResponseModel>
+    fun searchList(@Query("query") query: String): Call<LostItemListResponseModel>
+
+    @POST("/auth/verification")
+    fun getCertificationNum(@Body phoneBody: RequestBody): Call<Any>
+
+    @POST("/auth/check")
+    fun checkCertification(@Body body: RequestBody): Call<Any>
+
+    @GET("/item/reserve")
+    fun reserveItem(@Query("no") no: Int, @Query("owner") owner: String, @Query("comment") comment: String): Call<Any>
+
 }
