@@ -19,11 +19,6 @@ class FinishItemListActivity : AppCompatActivity(), MainItemAdapter.OnItemClicke
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish_item_list)
 
-        mAdapter.addItem(LostItem(1, "", "", "", "", "", "", ""))
-        mAdapter.addItem(LostItem(1, "", "", "", "", "", "", ""))
-        mAdapter.addItem(LostItem(1, "", "", "", "", "", "", ""))
-        mAdapter.addItem(LostItem(1, "", "", "", "", "", "", ""))
-        mAdapter.addItem(LostItem(1, "", "", "", "", "", "", ""))
 
         finishItemList.run {
             adapter = mAdapter

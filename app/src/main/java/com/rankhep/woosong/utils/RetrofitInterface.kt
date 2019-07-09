@@ -31,4 +31,7 @@ interface RetrofitInterface {
 
     @GET("/item/list")
     fun getList():Call<LostItemListResponseModel>
+
+    @GET("/item/search")
+    fun searchList(@Query("query") query: String):Call<LostItemListResponseModel>
 }
