@@ -43,4 +43,6 @@ interface RetrofitInterface {
     @GET("/item/reserve")
     fun reserveItem(@Query("no") no: Int, @Query("owner") owner: String, @Query("comment") comment: String): Call<Any>
 
+    @GET("/item/myreserve")
+    fun getMyReserveItem(@Query("owner") owner: String): Call<LostItemListResponseModel>
 }

@@ -31,7 +31,9 @@ class FindItemMessageActivity : AppCompatActivity() {
                         override fun onResponse(call: Call<Any>, response: Response<Any>) {
                             if(response.isSuccessful){
                                 Toast.makeText(applicationContext, "예약이 완료되었습니다.",Toast.LENGTH_SHORT).show()
+
                                 setResult(Activity.RESULT_OK)
+
                                 finish()
                             }else{
                                 Toast.makeText(applicationContext, "에러" + response.message(),Toast.LENGTH_SHORT).show()
